@@ -101,7 +101,6 @@ namespace CRUD_application_2.Controllers
             // Update the user's information
             user.Name = updatedUser.Name;
             user.Email = updatedUser.Email;
-            user.PhoneNumber = updatedUser.PhoneNumber;
 
             // Redirect to the Index action to display the updated list of users
             return RedirectToAction("Index");
