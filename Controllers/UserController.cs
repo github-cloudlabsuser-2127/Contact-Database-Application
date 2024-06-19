@@ -78,38 +78,6 @@ namespace CRUD_application_2.Controllers
 
             return View(user);
         }
-
-        // POST: User/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, User updatedUser)
-        {
-            // This method is responsible for handling the HTTP POST request to update an existing user with the specified ID.
-            // It receives user input from the form submission and updates the corresponding user's information in the userlist.
-            // If successful, it redirects to the Index action to display the updated list of users.
-            // If no user is found with the provided ID, it returns a HttpNotFoundResult.
-            // If an error occurs during the process, it returns the Edit view to display any validation errors.
-
-            User user = userlist.FirstOrDefault(u => u.Id == id);
-
-            if (user == null)
-            {
-            return HttpNotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-            // Update the user's information
-            user.Name = updatedUser.Name;
-            user.Email = updatedUser.Email;
-            user.PhoneNumber = updatedUser.PhoneNumber;
-
-            // Redirect to the Index action to display the updated list of users
-            return RedirectToAction("Index");
-            }
-
-            // If there are validation errors, return the Edit view with the updatedUser object
-            return View(updatedUser);
-        }
  
         // POST: User/Edit/5
         [HttpPost]
