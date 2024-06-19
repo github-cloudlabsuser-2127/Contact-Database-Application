@@ -3,7 +3,7 @@ name: Azure Web App CI/CD
 on:
     push:
         branches:
-            - main
+            - master
 
 jobs:
     build-and-deploy:
